@@ -1,0 +1,41 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+
+# Go
+*.exe
+*.test
+*.out
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Generated build files
+**/build/
+node_modules/
+.venv/
+__pycache__/
+
+# Terraform local files
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Local configuration and credentials
+.env
+.env.*
+*.pem
+*.key
+**/.xcode.env

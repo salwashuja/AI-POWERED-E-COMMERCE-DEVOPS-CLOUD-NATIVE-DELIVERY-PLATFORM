@@ -1,0 +1,39 @@
+services:
+ product-catalog:
+   image: wajhip/product-catalog:v1
+   
+   environment:
+     PRODUCT_CATALOG_PORT: "8088"
+     OTEL_SERVICE_NAME: product-catalog
+
+   networks: 
+   - ecommerce-network
+ 
+ ad-service:
+   image: wajhip/ad-service:v1
+   environment: 
+     AD_PORT: "9099"
+     OTEL_SERVICE_NAME: ad
+
+   networks: 
+   - ecommerce-network
+ 
+ recommendation-service:
+   image: wajhip/recommendation-service:v1
+   environment:
+     RECOMMENDATION_PORT: "1010"
+     PRODUCT_CATALOG_ADDR: product-catalog:8088
+     OTEL_SERVICE_NAME: recommendation
+
+   networks: 
+   - ecommerce-network
+   depends_on:
+     - product-catalog
+networks:
+  ecommerce-network:
+    driver: bridge
+
+
+   
+
+
