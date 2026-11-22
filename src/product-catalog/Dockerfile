@@ -5,6 +5,7 @@ WORKDIR /usr/src/app/
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     mkdir -p /root/.cache/go-build
+    
 
 COPY go.mod go.sum ./
 
